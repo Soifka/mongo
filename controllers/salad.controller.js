@@ -29,10 +29,21 @@ module.exports.getAllSalads = async (req, res, next) => {
     }
 };
 
-module.exports.updateSalade = () => {
-
+module.exports.updateSalade = async (req, res, next) => {
+    try {
+        
+    } catch (error) {
+        next(error);
+    }
 };
 
-module.exports.deleteSalad = () => {
-
+module.exports.deleteSalad = async (req, res, next) => {
+    try {
+        const { params: { saladId } } = req;
+        const result = await Salad.findByIdAndDelete(saladId);
+        console.log(result)
+        res.status(200).send('Salad was successfully deleted');
+    } catch (error) {
+        next(error);
+    }
 };

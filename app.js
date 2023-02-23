@@ -9,7 +9,7 @@ app.post('/', SaladController.createSalad);
 app.get('/', SaladController.getAllSalads);
 app.get('/:saladId', SaladController.getSalad);
 app.patch('/:saladId');
-app.delete('/:saladId');
+app.delete('/:saladId', SaladController.deleteSalad);
 
 app.use(errorHandler);
 
