@@ -1,0 +1,12 @@
+PATCH http://localhost:5000/63f7b413dc7859bc8c6ac9af HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Olivie new recipe",
+    "weight": 1.0,
+    "ingredients": ["potatoes", "chicken", "pea", "eggs", "cucumbers"],
+    "sauce": "mayonnaise",
+    "dietType": "none",
+    "spicy": false,
+    "expired": "2023-02-28"
+}

@@ -8,7 +8,7 @@ app.use(express.json());
 app.post('/', SaladController.createSalad);
 app.get('/', SaladController.getAllSalads);
 app.get('/:saladId', SaladController.getSalad);
-app.patch('/:saladId');
+app.patch('/:saladId', SaladController.updateSalade);
 app.delete('/:saladId', SaladController.deleteSalad);
 
 app.use(errorHandler);

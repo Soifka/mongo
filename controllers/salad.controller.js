@@ -31,7 +31,9 @@ module.exports.getAllSalads = async (req, res, next) => {
 
 module.exports.updateSalade = async (req, res, next) => {
     try {
-        
+        const { body, params: { saladId } } = req;
+        const result = await Salad.findByIdAndUpdate(saladId, body, {returnDocument: 'after'});
+        res.status(200).send(result);
     } catch (error) {
         next(error);
     }
