@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const DB = process.env.DB_NAME || 'fe_test';
+const DB = process.env.DB_NAME || 'db-test';
 
-mongoose.connect('mongodb://localhost:27017/DB')
+mongoose.connect(`mongodb://localhost:27017/${DB}`)
 .catch(err => {
     console.log('Connect failed!');
     next(err);
