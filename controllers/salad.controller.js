@@ -20,8 +20,13 @@ module.exports.getSalad = async (req, res, next) => {
     }
 };
 
-module.exports.getAllSalads = () => {
-
+module.exports.getAllSalads = async (req, res, next) => {
+    try {
+        const salads = await Salad.find();
+        res.status(200).send(salads);
+    } catch (error) {
+        next(error);
+    }
 };
 
 module.exports.updateSalade = () => {
