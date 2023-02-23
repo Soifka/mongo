@@ -10,8 +10,14 @@ module.exports.createSalad = async (req, res, next) => {
     }
 };
 
-module.exports.getSalad = () => {
-
+module.exports.getSalad = async (req, res, next) => {
+    try {
+        const { params: { saladId } } = req;
+        const salad = await Salad.findById(saladId);
+        res.status(200).send(salad);
+    } catch (error) {
+        next(error);
+    }
 };
 
 module.exports.getAllSalads = () => {
