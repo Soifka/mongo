@@ -2,11 +2,11 @@ POST http://localhost:5000/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Olivie",
+    "name": "Caesar",
     "weight": 1.0,
-    "ingredients": ["potatoes", "chicken", "pea", "eggs", "cucumbers"],
-    "sauce": "mayonnaise",
+    "ingredients": ["romaine lettuce", "parmesan cheese", "chicken", "crisp croutons"],
+    "sauce": "olive oil",
     "dietType": "none",
     "spicy": false,
-    "expired": "2023-02-26"
+    "expired": "2023-02-28"
 }

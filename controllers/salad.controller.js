@@ -14,7 +14,11 @@ module.exports.getSalad = async (req, res, next) => {
     try {
         const { params: { saladId } } = req;
         const salad = await Salad.findById(saladId);
-        res.status(200).send(salad);
+        if(salad) {
+            res.status(200).send(salad);
+        } else {
+            res.status(400).send('There is not the salad with this id');
+        }
     } catch (error) {
         next(error);
     }
@@ -32,8 +36,12 @@ module.exports.getAllSalads = async (req, res, next) => {
 module.exports.updateSalade = async (req, res, next) => {
     try {
         const { body, params: { saladId } } = req;
-        const result = await Salad.findByIdAndUpdate(saladId, body, {returnDocument: 'after'});
-        res.status(200).send(result);
+        const updated = await Salad.findByIdAndUpdate(saladId, body, {returnDocument: 'after'});
+        if(updated) {
+            res.status(200).send(updated);
+        } else {
+            res.status(400).send('There is not the salad with this id');
+        }
     } catch (error) {
         next(error);
     }
@@ -42,9 +50,12 @@ module.exports.updateSalade = async (req, res, next) => {
 module.exports.deleteSalad = async (req, res, next) => {
     try {
         const { params: { saladId } } = req;
-        const result = await Salad.findByIdAndDelete(saladId);
-        console.log(result)
-        res.status(200).send('Salad was successfully deleted');
+        const deleted = await Salad.findByIdAndDelete(saladId);
+        if(deleted) {
+            res.status(200).send(/*'Salad was successfully deleted'*/deleted);
+        } else {
+            res.status(400).send('There is not the salad with this id');
+        }
     } catch (error) {
         next(error);
     }
