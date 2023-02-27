@@ -1,0 +1,1 @@
+GET http://localhost:5000/api/salads/63fcf52472a510feec3b115c HTTP/1.1

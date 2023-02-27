@@ -1,6 +1,0 @@
-PATCH http://localhost:5000/63f8f15a9ad39f54e5ac1468 HTTP/1.1
-Content-Type: application/json
-
-{
-    "name": "Caesar new edition"
-}
